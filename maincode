@@ -1,0 +1,28 @@
+def enter_card_details():
+    print("Welcome to the Card Details Entry Program.")
+    print("Please provide the following details:")
+
+    card_holder_name = input("Enter the cardholder's name: ")
+    card_number = input("Enter the 16-digit card number: ")
+    while len(card_number) != 16 or not card_number.isdigit():
+        print("Invalid card number. Please enter exactly 16 digits.")
+        card_number = input("Enter the 16-digit card number: ")
+
+    expiry_date = input("Enter the expiry date (MM/YY): ")
+    while len(expiry_date) != 5 or expiry_date[2] != "/":
+        print("Invalid format. Please enter in MM/YY format.")
+        expiry_date = input("Enter the expiry date (MM/YY): ")
+
+    cvv = input("Enter the 3-digit CVV: ")
+    while len(cvv) != 3 or not cvv.isdigit():
+        print("Invalid CVV. Please enter exactly 3 digits.")
+        cvv = input("Enter the 3-digit CVV: ")
+
+    print("\nCard Details Entered Successfully!")
+    print("Cardholder Name:", card_holder_name)
+    print("Card Number: **** **** ****", card_number[-4:])
+    print("Expiry Date:", expiry_date)
+    print("Thank you for using our service!")
+
+# Call the function to execute
+enter_card_details()
